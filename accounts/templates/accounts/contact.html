@@ -1,0 +1,25 @@
+{% extends 'pages/videos.html' %}
+{% block content %}
+<div class='container' style='padding-right: 15px;
+    padding-left: 155px;
+    margin-right: auto;
+    margin-left: auto;'
+    >
+
+              
+                
+                  <h2 class="box-title">Compose New Message</h2>
+                
+                <div class="box-body" style='font-weight:normal'>
+                  <form method ='POST' action="{%url 'accounts:contact'%}">
+                    {{ form.as_p }}
+                     {% csrf_token %} 
+                    <input type='submit' class='btn btn-warning' value='Send'>
+                  </form>
+                  </div>
+                  
+                  
+                
+            
+            </div>
+{% endblock content %}

@@ -1,0 +1,54 @@
+{% extends 'pages/videos.html' %}
+{% block content %}
+
+  <div class="title h1 text-center">Weekly Videos</div>
+  </br>
+<div class="row">
+{% for all_lists in videos_lists %}
+
+<div class="col-2">
+<div class="card" style="width: 18rem; margin-left:140px">
+<div class="container py-3">
+
+  <!-- Card Start -->
+  <div class="card">
+    <div class="row ">
+<hr>
+      <div class="col-md-7 px-3">
+        <div class="card-block px-6" style='font-weight:normal'>
+        
+          <h3 class="card-title"><a href="{% url 'videos:list_videos' all_lists.list_title %}">{{ all_lists.list_title }}</a></h3>
+          <p class="card-text">
+            {{ all_lists.discription|truncatewords:80|linebreaks}}  </p>
+           <br></br><br>
+          <a class='btn btn-cfb15f' href="{% url 'videos:list_videos' all_lists.list_title %}"> <b>View</b></a>
+        </div>
+      </div>
+      <!-- Carousel start -->
+      <div class="col-md-5">
+        <div id="CarouselTest" class="carousel slide" data-ride="carousel">
+          <div class="carousel-inner">
+            <div class="carousel-item active">
+              <img class="d-block" src="{{ all_lists.list_cover.url }}" alt="No image" style="height: 250px; width: 400px">
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- End of carousel -->
+    </div>
+  </div>
+  <hr></br><br>
+  <!-- End of card -->
+
+</div>
+    </div>
+</div>
+{% endfor %}
+
+</div>
+{% endblock content %}
+
+
+
+<a href="{% url 'videos:list_videos' all_lists.list_title %}"> </a>
+{{ all_lists.create_date|date:"D M Y" }}

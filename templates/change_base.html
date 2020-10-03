@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  
+  <script src="{% static 'cdn.jsdelivr.net/npm/medium-editor@latest/dist/js/medium-editor.min.js'%}"></script>
+  <link rel="stylesheet" href="{% static 'cdn.jsdelivr.net/npm/medium-editor@latest/dist/css/medium-editor.min.css'%}" type="text/css" media="screen" charset="utf-8">
+<link rel="stylesheet" href="{% static 'signup/signup.css'%}" type="text/css" media="screen" charset="utf-8">
+
+  <title>Believer</title>
+  <meta content="" name="descriptison">
+  <meta content="" name="keywords">
+  {% include 'base/css.html' %}
+</head>
+
+<body >
+  {% include 'base/nav.html' %}
+  
+   <section id="about" class="about">
+    {% block content %}
+
+    {% endblock content %}
+    </section>
+    {% include 'base/js.html' %}
+</body>
+</html>

@@ -1,0 +1,21 @@
+{% extends 'pages/videos.html' %}
+{% block content %}
+<div class='container' style ='margin-top:20px ;'>
+<h1 style='text-align:center'>{{ notes.title }}</h1>
+<p style='text-align:center;font-weight: normal;'><small >created: {{ notes.create_date|date:'d-M-Y :P'  }}</small></p>
+</div><hr style="width: 80%;">
+<div class='container' style ='padding-right: 15px;
+    padding-left: 0px;
+    margin-right: auto;
+    margin-left: auto;'>
+<div class='row'>
+<div class='col'>
+  
+<h4 style=' text-align:center;font-weight: normal; '>{{ notes.essay|linebreaks }}</h4>
+</div>
+</div>
+<a href="{% url 'notes:notes_delete' pk=notes.pk %}"> <button class="btn btn-#ccb852 pull-right" >Delete</button></a>
+
+</div>
+
+{% endblock content %}

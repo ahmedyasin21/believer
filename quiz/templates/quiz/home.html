@@ -1,0 +1,24 @@
+{% extends 'pages/videos.html' %}
+
+{% block title%}
+
+  Home
+{% endblock %}
+
+{% block content %}
+  <div class ='container' style = 'padding-right: 15px;
+    padding-left: 175px;
+    margin-right: auto;
+    margin-left: auto;' > 
+  <h1 class="center">Welcome to Quiz 1.0</h1>
+  <h2>Select the catagory to begin with the quiz in that catagory</h2>
+  {% for choice in choices %}
+  <div class = 'container'>
+  <div class="row">
+      <div class="col-md-4">
+      <a href="/quiz/{{ choice.0 }}"><h3>{{ choice.1 }}</h3></a>
+    </div>
+  </div>
+  </div>
+  {% endfor %}
+{% endblock %}

@@ -1,0 +1,26 @@
+{% extends 'change_base.html' %}
+{% load bootstrap3 %}
+{% block content %}
+<div class="background">
+<div class="login-form" >
+    <form method="POST">
+    {% csrf_token %}
+        <h2 class="text-center">Log in</h2>  
+        {% bootstrap_form form %}     
+        <div class="form-group">
+            <button type="submit" class="btn btn-warning btn-block">Log in</button>
+        </div>
+        <div class="clearfix">
+            <label class="float-left form-check-label"><input type="checkbox"> Remember me</label>
+            <a  href="{% url 'password_reset' %}" class="float-right"><span style='color:black;'>Forgot Password?</span></a>
+        </div>        
+    </form>
+    <p class="text-center" ><a href="{% url 'accounts:signup'%}"><span style='color:black;'>Create an Account</sspan></a></p>
+</div>
+</div>
+{% endblock  %}
+
+
+
+
+

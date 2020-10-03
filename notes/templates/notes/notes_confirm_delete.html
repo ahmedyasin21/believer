@@ -1,0 +1,13 @@
+{% extends "pages/videos.html" %}
+{% block content %}
+<form method="post">
+<div class='container' style='padding-right: 15px;
+    padding-left: 175px;
+    margin-right: auto;
+    margin-left: auto;'>
+    {% csrf_token %}
+    <h2>Are you sure you want to delete <b>"{{object}}"</b></h2>
+    <input type="submit" class="btn btn-danger" value="Confirm">
+</form>
+</div>
+{% endblock  %}

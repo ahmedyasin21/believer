@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+{% load bootstrap3 %}
+{% block content %}
+    <div class="main main-raised " style='margin-top:20px;'>
+		<div class="profile-content">
+            <div class="container">
+                <div class="row">
+	                <div class="col-md-6 ml-auto mr-auto">
+        	           <div class="profile">
+	                        <div class="avatar">
+	                           <p style='text-align:center;'> <img src="{{ user.profile.avatar.url }}" alt="Circle Image" class="img-raised rounded-circle img-fluid"></p>
+	                        </div>
+	                        <div class="name">
+	                            <h3 class="title">{{ user.username }}</h3>
+								<h6>Muslim</h6>
+								<a href="#pablo" class="btn btn-just-icon btn-link btn-dribbble"><i class="fa fa-dribbble"></i></a>
+                                <a href="#pablo" class="btn btn-just-icon btn-link btn-twitter"><i class="fa fa-twitter"></i></a>
+                                <a href="#pablo" class="btn btn-just-icon btn-link btn-pinterest"><i class="fa fa-pinterest"></i></a>
+	                        </div>
+	                    </div>
+    	            </div>
+                </div>
+                <div >
+                    <p style='text-align:center;width: 70%;;margin-left:140px;'>An artist of considerable range, Chet Faker — the name taken by Melbourne-raised, Brooklyn-based Nick Murphy — writes, performs and records all of his own music, giving it a warm, intimate feel with a solid groove structure. </p>
+                </div>
+{% endblock  %}

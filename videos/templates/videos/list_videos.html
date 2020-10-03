@@ -1,0 +1,47 @@
+{% extends 'pages/videos.html' %}
+{% block content %}
+<div class="vid-main-wrapper clearfix" style="margin-top: 90px;" >
+
+  		    <!-- THE YOUTUBE PLAYER -->
+      <div class="vid-container">
+          <iframe id="vid_frame" src="https://www.youtube.com/embed/nitnFka-E8E?rel=0&showinfo=0&autohide=1" frameborder="0" width="560" height="315"></iframe>
+      </div>
+
+      <!-- THE PLAYLIST -->
+      <div class="vid-list-container">
+
+            <ol id="vid-list">
+            {% for all_videos in videos_list %}
+              <li><hr>
+                <a href="javascript:void();" onClick="document.getElementById('vid_frame').src='{{all_videos.video_url}}?autoplay=1&rel=0&showinfo=0&autohide=1'">
+                  {% comment %} <span class="vid-thumb"><img width=72 src="https://img.youtube.com/vi/cOSEOYi9JS4/default.jpg" /></span> {% endcomment %}
+                  <div class="desc"><h4 style='text-align:center'><b> {{ all_videos.video_title }}</b></h4></div>
+                </a>
+              </li>
+            {% endfor %}
+            </ul>
+              
+       </div>
+
+
+</div>
+
+
+{% endblock content %}
+<h1 style='text-align:center'>List : {{ view.kwargs.list_title }}</h1>
+{% comment %} {% for all_videos in videos_list %} {% endcomment %}
+<h2 style='text-align:center'>{{ all_videos.video_title }}</h2>
+<ul>
+<p style ='text-align:center'>
+<object style="height: 390px; width: 640px"><param name="movie" value="{{all_videos.video_url}}"><param name="allowFullScreen" value="true"><param name="allowScriptAccess" value="always"><embed src="{{all_videos.video_url}}" type="application/x-shockwave-flash" allowfullscreen="true" allowScriptAccess="always" width="640" height="390"></object>
+</p>
+<p style ='text-align:center'>
+Discription :{{all_videos.video_discription}}
+</p>
+        <div class="date">
+            <p style='text-align:center'>
+                Published on: {{ all_videos.create_date|date:"D M Y" }}
+            </p>
+         </div> 
+<br></br>
+{% comment %} {% endfor %} {% endcomment %}
